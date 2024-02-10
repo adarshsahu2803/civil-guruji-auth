@@ -27,7 +27,8 @@ function Signup() {
     console.log(formData);
 
     try {
-      const response = await fetch(`${process.env.SERVER_URL}/signup`, {
+      // const response = await fetch(`${process.env.SERVER_URL}/signup`, {
+      const response = await fetch(`http://localhost:5000/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
