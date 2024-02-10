@@ -1,9 +1,17 @@
-import React from 'react'
+import Hero from "../components/Hero"
+import AboutImg from "../assets/1.jpg"
 
 function About() {
   return (
-    <div>About</div>
+    <>
+      <Hero
+        cName="hero-mid"
+        heroImg={AboutImg}
+        title="About"
+        btnClass="hide"
+      />
+    </>
   )
 }
 
-export default About
+export default About;

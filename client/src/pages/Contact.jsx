@@ -1,9 +1,17 @@
-import React from 'react'
+import Hero from "../components/Hero"
+import AboutImg from "../assets/1.jpg"
 
 function Contact() {
   return (
-    <div>Contact</div>
-  )
+    <>
+      <Hero
+        cName="hero-mid"
+        heroImg={AboutImg}
+        title="Contact"
+        btnClass="hide"
+      />
+    </>
+  );
 }
 
-export default Contact
+export default Contact;
