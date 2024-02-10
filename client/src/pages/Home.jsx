@@ -11,7 +11,7 @@ function Home (){
             As A Civil Engineer"
             // text="Civil की बात Guruji के साथ..."
             buttonText="Explore Courses"
-            url="/dest"
+            url="/service"
             btnClass="show"
         />
         </>
