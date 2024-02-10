@@ -1,9 +1,19 @@
-import React from 'react'
+import Hero from "../components/Hero"
+import signup from "../assets/1.jpg"
+import SignupForm from "../components/SignupForm";
 
 function Signup() {
   return (
-    <div>Signup</div>
-  )
+    <>
+      <Hero
+        cName="hero-mid"
+        heroImg={signup}
+        title="Signup"
+        btnClass="hide"
+      />
+      <SignupForm />
+    </>
+  );
 }
 
-export default Signup
+export default Signup;

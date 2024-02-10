@@ -16,7 +16,7 @@ class Navbar extends Component {
         return (
             <nav className="NavbarItems">
                 <div>
-                    <Link className="navbar-logo" to={"/"}>Quest</Link>
+                    <Link className="navbar-logo" to={"/"}>CivilGuruji</Link>
                 </div>
 
                 <div className="menu-icons" onClick={this.handleClick}>
