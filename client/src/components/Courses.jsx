@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "../css/Courses.css";
 import CourseData from "./CourseData"
 import Course1 from "../assets/1.jpg"
 import Course2 from "../assets/1.jpg"
 import Course3 from "../assets/1.jpg"
+import Checkout from '../pages/Checkout';
 
 function Courses() {
+    const [clicked, setClicked] = useState(false);
 
     function redirectToCheckout() {
-        window.location.href = '/checkout';
+        setClicked(true);
+    }
+
+    if (clicked) {
+        return (
+            <Checkout />
+        );
     }
 
     return (
