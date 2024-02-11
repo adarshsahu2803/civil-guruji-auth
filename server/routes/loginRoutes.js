@@ -7,7 +7,7 @@ router.post('/login', async (req, res) => {
 
     try {
         const user = await Login.findOne({ userName });
-        console.log(user)
+        // console.log(user)
         if (!user) {
             return res.status(401).json({ message: 'Invalid credentials' });
         }
@@ -23,7 +23,8 @@ router.post('/login', async (req, res) => {
             // Calculate the difference in days between last login and current time
             const lastLoginDate = new Date(user.lastLoginTimestamp);
             const currentDate = new Date();
-            const differenceInDays = Math.floor((currentDate - lastLoginDate) / (1000 * 60 * 60 * 24));
+            // const differenceInDays = Math.floor((currentDate - lastLoginDate) / (1000 * 60 * 60 * 24));
+            const differenceInDays = 6;
 
             if (differenceInDays > 5) {
                 // If user was inactive for more than 5 days, update last login timestamp and send alert

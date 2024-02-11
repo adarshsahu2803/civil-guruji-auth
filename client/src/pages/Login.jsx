@@ -18,7 +18,7 @@ function Login() {
             [name]: value,
         });
     };
-    
+
     const [loggedIn, setLoggedIn] = useState(false);
 
     const handleLogin = async (e) => {
@@ -36,9 +36,13 @@ function Login() {
             });
 
             if (response.ok) {
-                alert('Login successful.');
-                console.log('Logged in successfully');
-
+                const data = await response.json();
+                if (data.message === 'User inactive for more than 5 days') {
+                    alert('User inactive for more than 5 days');
+                } else {
+                    alert('Login successful.');
+                    console.log('Logged in successfully');
+                }
                 setLoggedIn(true);
             } else {
                 alert('Invalid credentials.');
