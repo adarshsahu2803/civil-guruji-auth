@@ -2,6 +2,7 @@ import Hero from "../components/Hero"
 import HomeImg from "../assets/1.jpg"
 import React, { useContext } from 'react';
 import { UserContext } from "../contexts/UserContext";
+import Courses from "../components/Courses";
 
 function Home (){
     const userObj = useContext(UserContext);
@@ -20,6 +21,7 @@ function Home (){
             url="/service"
             btnClass="show"
         />
+        <Courses />
         </>
     );
 }
