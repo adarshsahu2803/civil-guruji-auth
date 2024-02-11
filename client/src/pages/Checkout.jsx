@@ -1,20 +1,34 @@
 import Home from './Home';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import '../css/Checkout.css';
 
 function Checkout() {
     const [checkedOut, setCheckedOut] = useState(false);
 
     const handlePurchase = () => {
-        // Handle purchase logic here
-        // Redirect to Home after purchase
         setCheckedOut(true);
     };
 
-    const handleTerminate = () => {
-        // Handle termination logic here
-        // Redirect to Home after termination
+    const handleTerminate = async () => {
         setCheckedOut(true);
+        alert('User did not proceed to purchase a course');
+
+        // try {
+        //     const response = await fetch('http://localhost:5000/checkout', {
+        //         method: 'POST',
+        //         headers: {
+        //             'Content-Type': 'application/json',
+        //         },
+        //         body: JSON.stringify({ userName: "Adarsh" }),
+        //     });
+        //     if (response.ok) {
+        //         console.log('Email sent successfully');
+        //     } else {
+        //         console.error('Failed to send email');
+        //     }
+        // } catch (error) {
+        //     console.error('Error sending email:', error);
+        // }
     };
 
     if (checkedOut) {
