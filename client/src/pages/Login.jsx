@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import '../css/Login.css';
 import signinImg from '../assets/signin-image.jpg';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../contexts/UserContext.jsx';
+import Home from './Home.jsx';
 
 function Login() {
     const [formLoginData, setFormLoginData] = useState({
@@ -16,6 +18,8 @@ function Login() {
             [name]: value,
         });
     };
+    
+    const [loggedIn, setLoggedIn] = useState(false);
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -35,7 +39,7 @@ function Login() {
                 alert('Login successful.');
                 console.log('Logged in successfully');
 
-                window.location.href = '/';
+                setLoggedIn(true);
             } else {
                 alert('Invalid credentials.');
                 console.log('Login failed');
@@ -46,6 +50,14 @@ function Login() {
             console.error('Error occurred during login:', error);
         }
     };
+
+    if (loggedIn) {
+        return (
+            <UserContext.Provider value={formLoginData}>
+                <Home />
+            </UserContext.Provider>
+        );
+    }
 
     return (
         <div className='main-div1'>
