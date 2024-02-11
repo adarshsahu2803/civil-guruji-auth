@@ -21,7 +21,9 @@ mongoose.connect(process.env.MONGO_URI)
 // Import route handlers
 const loginRoutes = require('./routes/loginRoutes');
 const signupRoutes = require('./routes/signupRoutes');
+const checkoutRoutes = require('./routes/checkoutRoutes');
 
 // Use routes
 app.use('/', loginRoutes);
 app.use('/', signupRoutes);
+app.use('/', checkoutRoutes);

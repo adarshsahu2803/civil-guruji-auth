@@ -22,14 +22,14 @@ const sendEmail = async (toEmail, subject, text, html) => {
             text: text,
             html: html
         });
-        console.log('Email sent successfully');
+        // console.log('Email sent successfully');
     } catch (error) {
         console.error('Error sending email:', error);
     }
 };
 
 router.post('/checkout', async (req, res) => {
-    const { userName } = req.body;
+    const { userName, password } = req.body;
 
     try {
         const user = await Signup.findOne({ userName });

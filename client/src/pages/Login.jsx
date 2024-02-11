@@ -23,10 +23,11 @@ function Login() {
 
     const handleLogin = async (e) => {
         e.preventDefault();
-        console.log(formLoginData);
+        // console.log(formLoginData);
 
         try {
             const response = await fetch(`https://civil-guruji-auth.onrender.com/login`, {
+            // const response = await fetch(`http://localhost:5000/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -48,7 +49,7 @@ function Login() {
                 console.log('Login failed');
             }
 
-            console.log(response);
+            // console.log(response);
         } catch (error) {
             console.error('Error occurred during login:', error);
         }

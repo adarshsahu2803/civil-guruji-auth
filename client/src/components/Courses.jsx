@@ -5,9 +5,12 @@ import Course1 from "../assets/1.jpg"
 import Course2 from "../assets/1.jpg"
 import Course3 from "../assets/1.jpg"
 import Checkout from '../pages/Checkout';
+import { useContext } from 'react';
+import { UserContext } from "../contexts/UserContext";
 
 function Courses() {
     const [clicked, setClicked] = useState(false);
+    const userObj = useContext(UserContext);
 
     function redirectToCheckout() {
         setClicked(true);
@@ -15,7 +18,9 @@ function Courses() {
 
     if (clicked) {
         return (
-            <Checkout />
+            <UserContext.Provider value={userObj}>
+                <Checkout />
+            </UserContext.Provider>
         );
     }
 
