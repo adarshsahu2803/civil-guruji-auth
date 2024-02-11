@@ -34,6 +34,8 @@ function Login() {
             if (response.ok) {
                 alert('Login successful.');
                 console.log('Logged in successfully');
+
+                window.location.href = '/';
             } else {
                 alert('Invalid credentials.');
                 console.log('Login failed');
