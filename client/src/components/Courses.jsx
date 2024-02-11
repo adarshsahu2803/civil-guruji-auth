@@ -1,3 +1,4 @@
+import React from 'react';
 import "../css/Courses.css";
 import CourseData from "./CourseData"
 import Course1 from "../assets/1.jpg"
@@ -5,11 +6,16 @@ import Course2 from "../assets/1.jpg"
 import Course3 from "../assets/1.jpg"
 
 function Courses() {
+
+    function redirectToCheckout() {
+        window.location.href = '/checkout';
+    }
+
     return (
         <div className="course">
             <h1>Free Courses</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <div className="coursecard">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <div className="coursecard" onClick={redirectToCheckout}>
                 <CourseData
                     image={Course1}
                     heading="Enhance Floor Plan"

@@ -1,0 +1,22 @@
+.checkout-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+}
+
+.checkout-details {
+    margin-bottom: 20px;
+}
+
+.checkout-buttons button {
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 600px) {
+    .checkout-details {
+        font-size: 14px;
+    }
+}
